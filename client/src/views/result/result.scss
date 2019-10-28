@@ -1,0 +1,13 @@
+@import '../../styles/colors.scss';
+@import '../../styles/sizes.scss';
+
+.result {
+    &__container {
+        padding: $margin-unit $margin-unit 0;
+
+        a {
+            color: $primary;
+            text-decoration: inherit;
+        }
+    }
+}

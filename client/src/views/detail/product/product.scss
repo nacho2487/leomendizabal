@@ -1,0 +1,79 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/sizes.scss';
+@import '../../../styles/mixins.scss';
+
+.product {
+    &__image {
+        display: inline-block;
+        max-height: 680px;
+        max-width: 680px;
+        text-align: center;
+        width: calc(100% - 280px);
+
+        @media only screen and (max-width: $mobile-breakpoint){
+            width: 100%;
+            
+            img {
+                max-width: 100%;
+            }
+        }
+    }
+    &__info {
+        width: 250px;
+        float: right;
+        
+        &__status {
+            line-height: 14px;
+            margin: 0 0 $margin-unit;
+            @include proximaNova(14px);
+        }
+        &__name {
+            margin: 0;
+            @include proximaNova(24px, 400);
+        }
+        &__price {
+            margin: $double-margin-unit $margin-unit $double-margin-unit 0;
+            @include proximaNova(46px);
+
+            sup {
+                margin-left: 3px;
+                @include proximaNova(20px);
+            }
+        }
+        &__buy-button {
+            background-color: $button;
+            border-radius: 4px;
+            color: $button-font;
+            height: 44px;
+            max-width: 320px;
+            width: 247px;
+            @include proximaNova(18px);
+
+            @media only screen and (max-width: $mobile-breakpoint){
+                width: 100%;
+            }
+        }
+
+        @media only screen and (max-width: $mobile-breakpoint){
+            margin-bottom: 20px;
+            width: 100%;
+        }
+    }
+    &__description {
+        width: 100%;
+
+        &__title {
+            margin-bottom: $double-margin-unit;
+            margin-top: 180px;
+            @include proximaNova(28px);
+        }
+        &__text {
+            color: $primary-light-40;
+            @include proximaNova(16px);
+
+            @media only screen and (min-width: $ipad-breakpoint){
+                max-width: 80%;
+            }
+        }
+    }
+}

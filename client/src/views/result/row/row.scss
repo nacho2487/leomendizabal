@@ -1,0 +1,72 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/sizes.scss';
+
+.row {
+    border-bottom: 1px solid $base;
+    display: flex;
+    margin-bottom: $margin-unit;
+    padding-bottom: $margin-unit;
+
+    &__picture {
+        display: inline-block;
+        height: 180px;
+        line-height: 180px;
+        margin-right: $margin-unit;
+        width: 180px;
+    }
+
+    &--last {
+        border: none;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        height: 100%;
+        padding-top: $margin-unit;
+
+        &__price {
+            margin-bottom: $double-margin-unit;
+            @include proximaNova(24px);
+
+            &-currency {
+                margin-right: 5px;
+            }
+
+            sup {
+                font-size: 16px;
+                margin-left: 2px;
+                vertical-align: text-top;
+            }
+        }
+
+        &__shipping-icon {
+            display: inline-flex;
+            height: 20px;
+            margin-left: 10px;
+            width: 20px;
+        }
+
+        &__city {
+            float: right;
+            min-width: 100px;
+            width: 20%;
+            @include proximaNova(12px);
+
+            @media only screen and (max-width: $mobile-breakpoint){
+                width: 100%;
+            }
+        }
+
+        &__title {
+            line-height: 18px;
+            @include proximaNova(18px);
+        }
+
+        &__condition {
+            @include proximaNova(14px);
+        }
+    }
+}

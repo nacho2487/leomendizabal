@@ -1,0 +1,13 @@
+.image {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &--rounded {
+        border-radius: 4px;
+    }
+
+    &--icon {
+        border-radius: 100%;
+    }
+}

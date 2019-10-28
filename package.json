@@ -1,0 +1,43 @@
+{
+  "name": "ml-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prelaunch": "npm run install-dependencies",
+    "install-dependencies": "concurrently \"npm i\" \"cd client && npm i\"",
+    "launch": "npm run dev",
+    "dev": "concurrently \"npm run server-dev\" \"npm run client-dev\"",
+    "server-dev": "nodemon --watch 'src/**/*.ts' --ignore 'src/**/*.spec.ts' --exec npm run server",
+    "client-dev": "cd client && npm start",
+    "server": "ts-node server/server.ts",
+    "lint": "tslint ./src/**/*.ts ./test/**/*.spec.ts",
+    "lint:fix": "tslint --fix ./src/**/*.ts ./test/**/*.spec.ts -t verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leomendizabal/web.git"
+  },
+  "author": "Leonardo Mendizabal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leomendizabal/web/issues"
+  },
+  "homepage": "https://github.com/leomendizabal/web#readme",
+  "dependencies": {
+    "@types/body-parser": "^1.17.0",
+    "@types/express": "^4.16.0",
+    "@types/node": "^10.12.12",
+    "axios": "^0.19.0",
+    "body-parser": "^1.18.3",
+    "concurrently": "^5.0.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2",
+    "typescript": "^3.2.1",
+    "tslint": "^5.11.0",
+    "ts-node": "^7.0.1",
+    "tslint-config-prettier": "^1.17.0"
+  }
+}

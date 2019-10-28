@@ -1,0 +1,62 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+@import '../../styles/sizes.scss';
+
+.header {
+    background-color: $brand;
+	height: 55px;
+	padding: 9px 0 9px 0;
+	width: 100%;
+	z-index: 2;
+	
+	&__content {
+		height: 38px;
+		@include centerContent();
+		
+		&__logo {
+			width: 52px;
+			margin-right: 25px;
+			vertical-align: middle;
+		}
+		&__search {
+			border-radius: 4px 0 0 4px;
+			color: $primary;
+			font-size: 18px;
+			height: 100%;
+			padding-left: 15px;
+			vertical-align: middle;
+			width: calc(100% - 118px);
+		}
+		&__search::placeholder {
+			color: $primary-light-40;
+		}
+		&__button {
+			border-radius: 0 4px 4px 0;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-color: #EEEEEE;
+			cursor: pointer;
+			display: inline-block;
+			height: 38px;
+			line-height: 38px;
+			text-align: center;
+			vertical-align: middle;
+			width: 40px;
+
+			img {
+    			height: 20px;
+				object-fit: contain;
+			}
+		}
+	}
+
+	&__error {
+		color: red;
+		text-align: center;
+		@include centerContent();
+	}
+
+	@media only screen and (max-width: $mobile-breakpoint){
+		position: fixed;
+	}
+}

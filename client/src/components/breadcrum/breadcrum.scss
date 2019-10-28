@@ -1,0 +1,35 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.breadcrum {
+    color: $primary-light-40;
+    height: 45px;
+    line-height: 45px;
+    @include centerContent();
+    @include proximaNova(14px);
+
+    &__item {
+        display: inline;
+        list-style: none;
+        
+        &:after {
+            content: '>';
+            display: inline-block;
+            width: 1.5em;
+            text-align: center;
+        }
+
+        &--last {
+            font-weight: 600;
+
+            &:after {
+                content: ''
+            }
+        }
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+}
